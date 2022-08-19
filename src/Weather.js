@@ -11,21 +11,22 @@ export default function Weather(props) {
 
     setWeatherData({
       ready: true,
-      date: new Date (response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       city: response.data.name,
       tempMax: response.data.main.temp_max,
       tempMin: response.data.main.temp_min,
       wind: response.data.wind.speed,
       sky: response.data.weather[0].description,
-      icon: `./images/${response.data.weather[0].icon}.svg`,
-    });
-  }
+      icon: `images/${response.data.weather[0].icon}.png`,
+    });}
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <h1>{weatherData.city}</h1>
-        <h4><FormattedDate date={weatherData.date} /></h4>
+        <h4>
+          <FormattedDate date={weatherData.date} />
+        </h4>
         <div className="row justify-content-md-center current-weather align-items-center">
           <div className="col-4">
             <span>{Math.round(weatherData.temperature)}</span>
@@ -40,9 +41,7 @@ export default function Weather(props) {
           <div className="col-4">
             <img
               src={weatherData.icon}
-              alt=""
-              className="main-icon"
-              id="icon"
+              alt={weatherData.sky}
             />
           </div>
           <div className="col-4" id="weather-sky">
