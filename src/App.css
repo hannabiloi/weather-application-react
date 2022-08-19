@@ -1,0 +1,11 @@
+.App {
+   margin: 0 auto;
+  text-align: center;
+  margin: 30px;
+  font-family: "Comfortaa", cursive;
+}
+
+.App footer {
+  font-size: 11px;
+  margin-top: 5px;
+}
