@@ -30,7 +30,7 @@ export default function WeatherForecastDay(props) {
             {Math.round(props.data.temp.day)}°{" "}
           </span>
           <span className="WeatherForecast-temp-min">
-             {Math.round(props.data.temp.night)}°
+            {Math.round(props.data.temp.night)}°
           </span>
         </div>
       </div>

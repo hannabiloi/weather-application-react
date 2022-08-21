@@ -11,3 +11,15 @@
     top:-20px;
     right:10px;
 }
+
+@media (max-width: 500px) {
+  .Weather .unit {
+    font-size: 30px;
+}
+.Weather .units  {
+    position:relative;
+    top:-20px;
+    right:10px;
+    font-size: 12px;
+}
+}

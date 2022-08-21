@@ -20,7 +20,7 @@ export default function WeatherInfo(props) {
           <img src={props.data.icon} alt={props.data.sky} />
         </div>
       </div>
-      <div className="row mt-2">
+      <div className="row mt-2 d-flex align-items-center">
         <div className="col-6 text-start">
           <div>
             <i className="fa-solid fa-temperature-high"></i>

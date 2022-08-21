@@ -64,3 +64,9 @@ img {
   background-color: #DBE6FD;
   border: 1px solid #DBE6FD
 }
+
+@media (max-width: 400px) {
+  .Weather h1 {
+    font-size: 25px;
+  }
+}
