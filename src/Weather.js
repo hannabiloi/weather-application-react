@@ -55,7 +55,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-6 d-flex justify-content-end">
-              <button type="button" className="btn btn-outline-dark">
+              <button type="button" className="btn">
                 Search
               </button>
             </div>
