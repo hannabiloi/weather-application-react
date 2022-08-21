@@ -5,6 +5,7 @@
   padding: 20px;
   margin-top: 50px;
   margin: 0 auto;
+  background-color: #f8f7f9;
 }
 
 .Weather h1 {
@@ -21,7 +22,14 @@
   color: #393e46;
   font-weight: 300
 }
+.Weather input {
+  background-color: #f8f7f9;
+}
 
+
+.Weather form {
+  margin: 10px;
+}
 a {
   color: #9c9fa3;
   font-weight: 300;
@@ -35,5 +43,5 @@ a:hover {
 }
 
 img {
-    height: 32px;
+  height: 30px;
 }

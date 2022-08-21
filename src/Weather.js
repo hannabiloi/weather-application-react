@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
-
+import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 
@@ -13,6 +13,7 @@ export default function Weather(props) {
 
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       city: response.data.name,
@@ -23,24 +24,24 @@ export default function Weather(props) {
       icon: `images/${response.data.weather[0].icon}.png`,
     });
   }
-  function search () {
+  function search() {
     const apiKey = "f96a36c366f556dae54ef30478f423d0";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios(apiUrl).then(handleResponse);
-    
   }
   function handleSubmit(event) {
     event.preventDefault();
-    search()
+    search();
   }
 
   function handleCityChange(event) {
-      setCity(event.target.value)
+    setCity(event.target.value);
   }
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-6 align-self-center">
@@ -53,12 +54,9 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-6 align-self-center">
+            <div className="col-6 d-flex justify-content-end">
               <button type="button" className="btn btn-outline-dark">
                 Search
-              </button>
-              <button type="button" className="btn btn-outline-dark">
-                Current city
               </button>
             </div>
           </div>
@@ -66,7 +64,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-      search()
+    search();
     return "Loading";
   }
 }
