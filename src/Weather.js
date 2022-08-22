@@ -55,7 +55,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-6 d-flex justify-content-end">
-              <button type="button" className="btn">
+              <button type="button" className="btn" onClick={handleSubmit}>
                 Search
               </button>
             </div>
